@@ -169,11 +169,71 @@ footer {
     }
 
 }
+html{
+    scroll-behavior:smooth;
+}
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:46px;
+    height:46px;
+    min-width:46px;
+    padding:0;
+    border:none;
+    border-radius:50%;
+    background:#b8864b;
+    color:#fff;
+    font-size:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    box-shadow:0 6px 15px rgba(0,0,0,.25);
+    transition:.25s;
+    opacity:0;
+    visibility:hidden;
+    z-index:9999;
+}
+
+
+#topBtn.show{
+    opacity:1;
+    visibility:visible;
+}
+
+#topBtn:hover{
+    background:#8f6736;
+    transform:translateY(-3px);
+}
+
+@media(max-width:600px){
+    #topBtn{
+        width:50px;
+        height:50px;
+        right:15px;
+        bottom:15px;
+        font-size:22px;
+    }
+}
 </style>
 
 </head>
 
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+⬆
+</button>
+<script>
+const topBtn=document.getElementById("topBtn");
 
+window.addEventListener("scroll",()=>{
+    if(window.scrollY>200){
+        topBtn.classList.add("show");
+    }else{
+        topBtn.classList.remove("show");
+    }
+});
+</script>
 <body>
 
 
