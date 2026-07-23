@@ -216,13 +216,19 @@ html{
         font-size:22px;
     }
 }
+#topBtn{
+    min-width:46px;
+}
 </style>
 
 </head>
 
+<body>
+
 <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ⬆
 </button>
+
 <script>
 const topBtn=document.getElementById("topBtn");
 
@@ -234,7 +240,6 @@ window.addEventListener("scroll",()=>{
     }
 });
 </script>
-<body>
 
 
 <header>
