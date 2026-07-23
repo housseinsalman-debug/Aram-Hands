@@ -16,7 +16,7 @@
 
 body {
     background: #f5f3ef;
-    color: #333;
+    color:#333;
 }
 
 header {
@@ -24,16 +24,17 @@ header {
     url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874");
     background-size: cover;
     background-position: center;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
     color:white;
+    padding:20px;
 }
 
 header h1 {
-    font-size: 55px;
+    font-size:55px;
     margin-bottom:20px;
 }
 
@@ -41,22 +42,36 @@ header p {
     font-size:22px;
 }
 
+
 .buttons {
     margin-top:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
 }
+
 
 button, .button {
     background:#b8864b;
     color:white;
-    padding:15px 25px;
+    padding:15px 30px;
     border:none;
     border-radius:30px;
-    margin:10px;
     text-decoration:none;
     font-size:16px;
     cursor:pointer;
     transition:.3s;
+
+    /* verhindert Zusammenschieben */
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-width:140px;
+    white-space:nowrap;
 }
+
 
 button:hover, .button:hover {
     background:#8f6736;
@@ -66,6 +81,7 @@ button:hover, .button:hover {
 section {
     padding:60px 10%;
 }
+
 
 h2 {
     text-align:center;
@@ -104,6 +120,55 @@ footer {
     padding:30px;
 }
 
+
+/* Handy Optimierung */
+@media(max-width:600px){
+
+    header {
+        min-height:100vh;
+    }
+
+
+    header h1 {
+        font-size:38px;
+    }
+
+
+    header p {
+        font-size:18px;
+        line-height:1.4;
+    }
+
+
+    .buttons {
+        flex-direction:column;
+        width:100%;
+        gap:5px;
+    }
+
+
+    .button {
+        width:90%;
+        max-width:300px;
+        padding:15px 20px;
+    }
+
+
+    section {
+        padding:40px 5%;
+    }
+
+
+    h2 {
+        font-size:28px;
+    }
+
+
+    .card {
+        padding:20px;
+    }
+
+}
 </style>
 
 </head>
